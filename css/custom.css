@@ -449,3 +449,7 @@ h6::before {
     }
 }
 /* 自定义底部  End */
+.loading-img {
+  background: url(https://picst.sunbangyan.cn/2023/10/30/2c0da089e34471d1ac669135c77e6858.webp) no-repeat center center;
+  background-size: cover;
+}
