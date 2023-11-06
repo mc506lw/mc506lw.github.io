@@ -1,15 +1,17 @@
 let newYearTimer = null;
-var newYear = () => {
+const newYear = () => {
     clearTimeout(newYearTimer);
     if (!document.querySelector('#newYear')) return;
     // 新年时间戳 and 星期对象
-    let newYear = new Date('2023-01-22 00:00:00').getTime() / 1000,
-        week = { 0: '周日', 1: '周一', 2: '周二', 3: '周三', 4: '周四', 5: '周五', 6: '周六' }
+    let newYear = new Date('2024-01-10 00:00:00').getTime() / 1000,
+        week = {0: '周日', 1: '周一', 2: '周二', 3: '周三', 4: '周四', 5: '周五', 6: '周六'}
 
     time();
 
     // 补零函数
-    function nol(h) { return h > 9 ? h : '0' + h; };
+    function nol(h) {
+        return h > 9 ? h : '0' + h;
+    }
 
     function time() {
         // 现在 时间对象
@@ -27,7 +29,7 @@ var newYear = () => {
             document.querySelector('#newYear .newYear-time').innerHTML = '<span class="happyNewYear">新年快乐</p>';
         } else {
             // 大于0则还未过年
-            document.querySelector('#newYear .title').innerHTML = '距离2023年春节：'
+            document.querySelector('#newYear .title').innerHTML = '距离2024年春节：'
 
             // 大于一天则直接渲染天数
             if (second > 86400) {
@@ -57,7 +59,7 @@ var newYear = () => {
             useFlakeTrans: false
         });
     });
-}
+};
 // Pjax适配：若没有开启Pjax这里直接是newYear()即可
 // 开了Pjax的用以下两句
 document.addEventListener('pjax:complete', newYear);

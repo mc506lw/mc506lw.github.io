@@ -1,0 +1,66 @@
+/* 加载动画容器 */
+.loading-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 旋转并逐渐放大的黑色框架 */
+.black-frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg) scale(0);
+  background-color: black;
+  border-radius: 50%;
+  animation: rotateAndScale 2s linear infinite;
+}
+
+@keyframes rotateAndScale {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+  }
+}
+
+/* 自定义头像填充 */
+.avatar-filling {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("https://picdm.sunbangyan.cn/2023/10/30/db380ef03523756d7d49ba8e6d7c0e2f.jpg");
+  background-size: cover;
+  animation: fillAvatar 2s linear infinite;
+}
+
+@keyframes fillAvatar {
+  0% {
+    width: 0%;
+    height: 0%;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* 旋转缩小并消失 */
+.fade-out {
+  animation: fadeOut 2s linear forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(0);
+    opacity: 0;
+  }
+}
